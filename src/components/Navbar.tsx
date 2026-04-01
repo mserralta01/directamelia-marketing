@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Plane } from 'lucide-react';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -14,8 +15,9 @@ export default function Navbar() {
   }, []);
 
   const links = [
-    { label: 'Features', href: '#features' },
-    { label: 'How It Works', href: '#how-it-works' },
+    { label: 'Platform', href: '#platform' },
+    { label: 'Part 91', href: '#part-91' },
+    { label: 'Part 135', href: '#part-135' },
     { label: 'Agents', href: '#agents' },
     { label: 'Pricing', href: '#pricing' },
   ];
@@ -34,9 +36,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-400 to-brand-600 flex items-center justify-center">
-            <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-            </svg>
+            <Plane className="w-5 h-5 text-white" />
           </div>
           <span className="text-lg font-semibold text-white">Direct Amelia</span>
         </a>
@@ -58,16 +58,17 @@ export default function Navbar() {
             Sign In
           </a>
           <a
-            href="https://app.directamelia.com/signup"
+            href="#pricing"
             className="text-sm px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white rounded-lg transition-colors font-medium"
           >
-            Get Started
+            Book a Demo
           </a>
         </div>
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden text-slate-400 hover:text-white"
+          aria-label="Toggle menu"
         >
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             {mobileOpen ? (
@@ -100,8 +101,8 @@ export default function Navbar() {
               ))}
               <div className="pt-3 border-t border-white/5 flex flex-col gap-3">
                 <a href="https://app.directamelia.com/login" className="text-sm text-slate-300">Sign In</a>
-                <a href="https://app.directamelia.com/signup" className="text-sm px-4 py-2 bg-brand-600 text-white rounded-lg text-center font-medium">
-                  Get Started
+                <a href="#pricing" className="text-sm px-4 py-2 bg-brand-600 text-white rounded-lg text-center font-medium">
+                  Book a Demo
                 </a>
               </div>
             </div>
